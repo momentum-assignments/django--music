@@ -36,6 +36,49 @@ In your project directory, run the following to install the project dependencies
 > ./manage.py migrate
 ```
 
+To generate an app in your django_music project (so that you have something analogous to `contacts` in the Uptact assignment), you want to run the following (where <name_of_app> is a name you can choose) in your repo:
+
+`django-admin startapp <name_of_app>`
+
+If you ran `django-admin startapp albums`, your directory structure would look like:
+
+```
+.
+├── README.md
+├── albums
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── django_music
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── manage.py
+├── pyproject.toml
+├── static
+├── templates
+└── users
+    ├── __init__.py
+    ├── admin.py
+    ├── apps.py
+    ├── migrations
+    │   ├── 0001_initial.py
+    │   └── __init__.py
+    ├── models.py
+    ├── tests.py
+    └── views.py
+7 directories, 23 files
+```
+
+Once you have your app set up, be sure to add it to the `INSTALLED_APPS` list in `settings.py`.
+
 ### Django Project Template
 
 This project was generated from the Momentum Django project template. This template sets up some minimal changes:
