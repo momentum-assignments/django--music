@@ -18,7 +18,23 @@ Your Django app should allow you to do the following:
 
 Your app should have at least minimal styling. It's pretty practical to use a CSS library like [Tachyons](https://tachyons.io/) or [Picnic](https://picnicss.com/), though you can write custom CSS if you want to. Just remember that **for this assignment, functionality is a higher priority than styling**.
 
-A good place to start is planning out your model and making sure you can make an Album object in the shell. Make some simple wireframes to sketch out the different functions of the app on the list above, and the urls (and corresponding view functions) you will need to make each page show up. Start with the home page.
+A good place to start is planning out your Album model and making sure you can make an Album object in the shell and/or admin. Make a couple of them. Then, you can start working on urls and views by make a homepage to list the existing albums.
+
+## URLs
+
+Your app should have the following URLs. You'll need to define view functions to go along with each path. Remember, one view function can handle more than one type of request!
+
+| path                      | verb | purpose                                               |     |
+| ------------------------- | ---- | ----------------------------------------------------- | --- |
+| `""`                      | GET  | show a list of all the albums                         |     |
+| `/albums/new`             | POST | create a new album                                    |     |
+| `/albums/<int:pk>`        | GET  | show details about a single album                     |     |
+| `/albums/<int:pk>/edit`   | GET  | show a form to edit a new album                       |     |
+| `/albums/<int:pk>/edit`   | POST | update a specific album                               |     |
+| `/albums/<int:pk>/delete` | GET  | show a confirmation screen to delete a specific album |     |
+| `/albums/<int:pk>/delete` | POST | delete a specific album                               |     |
+
+❓ Why are we using `POST` instead of `DELETE` or `PUT/PATCH` verbs for the delete and update actions? It's because we are using web forms to send the data. [Web forms can only send `GET` or `POST` requests](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method). (We have more options with AJAX, but we haven't learned about how to use that with Django yet.)
 
 ## Spicy options 🌶️
 
