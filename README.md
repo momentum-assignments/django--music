@@ -16,9 +16,9 @@ Your Django app should allow you to do the following:
 - Edit an existing album
 - Delete an existing album
 
-Your app should have at least minimal styling. It's pretty practical to use a CSS library like [Tachyons](https://tachyons.io/) or [Picnic](https://picnicss.com/), though you can write custom CSS if you want to. Just remember that **for this assignment, functionality is a higher priority than styling**.
+Your app should have at least minimal styling. It's pretty practical to use a CSS library like [Bulma](https://bulma.io/) or [Picnic](https://picnicss.com/), though you can write custom CSS if you want to. Just remember that **for this project, functionality is a higher priority than styling**.
 
-A good place to start is planning out your Album model and making sure you can make an Album object in the shell and/or admin. Make a couple of them. Then, you can start working on urls and views by make a homepage to list the existing albums.
+A good place to start is planning out your Album model and making sure you can make an Album object in the admin or shell. Make a couple of them. Then, you can start working on urls and views by make a homepage to list the existing albums.
 
 ## URLs
 
@@ -35,14 +35,14 @@ Your app should have the following URLs. You'll need to define view functions to
 | `/albums/<int:pk>/delete` | GET  | show a confirmation screen to delete a specific album |
 | `/albums/<int:pk>/delete` | POST | delete a specific album                               |
 
-❓ Why are we using `POST` instead of `DELETE` or `PUT/PATCH` verbs for the delete and update actions? It's because we are using web forms to send the data. [Web forms can only send `GET` or `POST` requests](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method). (We have more options with AJAX, but we haven't learned about how to use that with Django yet.)
+❓ Why are we using `POST` instead of `DELETE` or `PUT/PATCH` verbs for the delete and edit actions? It's because we are using web forms to send the data. [Web forms can only send `GET` or `POST` requests](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method). We have more options with AJAX, but we haven't learned about how to use that with Django yet.
 
-## Spicy options 🌶️
+## 🌶️ Spicy options
 
 - Add an Artist model and create a foreign key on the Album model to associate the two.
   - Show the Artist and their other albums on the album detail page, with links to those album detail pages.
 - Create an way to mark an album as a favorite. Favorited albums are displayed with a star next to them (how you choose to show this is up to you). A user should be able to click on the star, or a link or button, to mark the album as a favorite.
-- Add an option to sort all albums on the list page by title, year, or artist.
+- Show a list of all the albums by a particular artist if a user clicks on an artist's name.
 
 ## Getting up and running
 
